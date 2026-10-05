@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#134B36">
+<title>Tomato Glasses Middle East | Children's glasses that stay put</title>
+<meta name="description" content="Flexible, adjustable glasses for babies and children, with lenses made to your child's measurements. Free home try-on, free GCC shipping, 15-day refund.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tomato:#D63A24;
+  --tomato-dark:#B52D1A;
+  --vine:#134B36;
+  --vine-soft:#2A6A50;
+  --sky:#E9F3F8;
+  --lens:#BFE0EE;
+  --lemon:#FFD74A;
+  --white:#FFFFFF;
+  --line:rgba(19,75,54,.16);
+  --display:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Trebuchet MS",sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --wrap:1200px;
+  --gutter:1.25rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--sky);color:var(--vine);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);line-height:1.12;margin:0;font-weight:900;letter-spacing:-.01em}
+h1{font-size:clamp(2.3rem,5.4vw,4rem)}
+h2{font-size:clamp(1.7rem,3.4vw,2.5rem)}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0}
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:max(var(--gutter),env(safe-area-inset-left)) max(var(--gutter),env(safe-area-inset-right))}
+:focus-visible{outline:3px solid var(--tomato);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;inset-inline-start:-999px;top:0;background:var(--white);padding:.6rem 1rem;z-index:100}
+.skip:focus{inset-inline-start:0}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:700 1rem/1 var(--body);padding:1rem 1.6rem;border-radius:999px;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn-primary{background:var(--tomato);color:var(--white)}
+.btn-primary:hover{background:var(--tomato-dark)}
+.btn-ghost{border-color:var(--vine);color:var(--vine);background:transparent}
+.btn-ghost:hover{background:var(--vine);color:var(--white)}
+.btn-light{border-color:var(--white);color:var(--white)}
+.btn-light:hover{background:var(--white);color:var(--vine)}
+
+/* top bar */
+.topbar{background:var(--vine);color:var(--white);font-size:.9rem}
+.topbar ul{list-style:none;margin:0;padding:.55rem 0;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.topbar li{display:flex;align-items:center;gap:.45rem}
+.topbar svg{flex:none}
+
+/* header */
+header.site{background:var(--white);position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 0}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:var(--display);font-weight:900;font-size:1.3rem}
+.nav{display:flex;align-items:center;gap:1.6rem}
+.nav a{text-decoration:none;font-weight:600;font-size:.97rem}
+.nav a:hover{color:var(--tomato)}
+.nav .btn{padding:.7rem 1.2rem;color:var(--white)}
+.nav .btn:hover{color:var(--white)}
+.menu-btn{display:none;background:none;border:2px solid var(--vine);border-radius:12px;padding:.5rem .7rem;font:700 .95rem var(--body);color:var(--vine);cursor:pointer}
+
+/* hero */
+.hero{padding-block:clamp(2.5rem,6vw,5rem)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.5rem,4vw,4rem);align-items:center}
+.hero p.lead{font-size:1.2rem;max-width:34rem;margin-block:1.2rem 1.8rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:.8rem}
+.facts{display:grid;grid-template-columns:repeat(3,auto);gap:1.4rem;justify-content:start;margin:2rem 0 0;padding:1.2rem 0 0;border-top:1px solid var(--line);list-style:none;font-size:.95rem}
+.facts strong{display:block;font-family:var(--display);font-size:1.05rem}
+.hero-art{position:relative;width:100%;max-width:560px;margin-inline:auto;aspect-ratio:1/.92}
+.tile{position:absolute;background:var(--lens);overflow:hidden}
+.tile img{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply}
+.tile.a{inset-block-start:0;inset-inline-start:6%;width:72%;aspect-ratio:1/1;border-radius:46% 54% 50% 50%/52% 46% 54% 48%}
+.tile.b{inset-block-end:0;inset-inline-end:0;width:46%;aspect-ratio:1/1;border-radius:34px;background:var(--white);border:6px solid var(--sky)}
+.award{position:absolute;inset-block-end:8%;inset-inline-start:0;width:clamp(96px,28%,132px);aspect-ratio:1/1;border-radius:50%;background:var(--lemon);display:grid;place-items:center;text-align:center;padding:.7rem;font:900 clamp(.62rem,2.3vw,.82rem)/1.2 var(--display);transform:rotate(-8deg)}
+
+/* sections */
+section{padding-block:clamp(3rem,7vw,5.5rem)}
+.sec-head{max-width:40rem;margin-bottom:2.2rem}
+.sec-head p{margin-top:.8rem;font-size:1.1rem}
+
+/* try-on */
+.tryon{background:var(--vine);color:var(--white)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s}
+.steps li{counter-increment:s;padding:1.6rem 1.4rem 1.6rem 0;border-top:2px solid rgba(255,255,255,.28);position:relative}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--lemon);color:var(--vine);font:900 1rem var(--display);margin-bottom:1rem}
+.steps h3{margin-bottom:.4rem}
+.steps p{color:rgba(255,255,255,.86);font-size:.97rem}
+.tryon .cta-row{margin-top:2rem;align-items:center}
+.tryon small{color:rgba(255,255,255,.8)}
+
+/* age */
+.ages{display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem;list-style:none;margin:0;padding:0}
+.ages a{display:block;background:var(--white);border-radius:22px;padding:1.2rem 1rem;text-decoration:none;border:2px solid transparent;transition:border-color .2s,background .2s}
+.ages a:hover{border-color:var(--tomato)}
+.ages b{display:block;font:900 1.5rem var(--display)}
+.ages span{font-size:.9rem;color:var(--vine-soft)}
+.sizetip{margin-top:1.4rem;display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;align-items:center;padding:1rem 1.3rem;border-radius:16px;background:var(--lens)}
+.sizetip code{font:700 1rem var(--body);background:var(--white);padding:.15rem .55rem;border-radius:8px}
+
+/* products */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem 1.2rem}
+.card{text-decoration:none;display:block}
+.card .pic{aspect-ratio:5/4;background:var(--white);border-radius:30px;overflow:hidden;display:grid;place-items:center;margin-bottom:.8rem;transition:background .2s}
+.card:hover .pic{background:var(--lens)}
+.card img{width:88%;height:88%;object-fit:contain;mix-blend-mode:multiply}
+.card h3{font-size:1.05rem}
+.card .meta{display:flex;justify-content:space-between;gap:.6rem;font-size:.93rem;color:var(--vine-soft)}
+.card .meta b{color:var(--vine)}
+.more{margin-top:2rem}
+
+/* fit lab */
+.lab-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(1.5rem,4vw,4rem);align-items:start}
+.feat{margin:2rem 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 2rem}
+.feat div{padding:.9rem 0;border-top:1px solid var(--line)}
+.feat dt{font-weight:700}
+.feat dd{margin:.15rem 0 0;font-size:.93rem;color:var(--vine-soft)}
+.lab{background:var(--white);border-radius:36px;padding:clamp(1.2rem,3vw,2rem)}
+.lab svg{width:100%;height:auto;display:block}
+.lab label{display:block;font-weight:700;margin-top:.6rem}
+.lab input[type=range]{width:100%;margin:.5rem 0 .1rem;height:44px;background:transparent;-webkit-appearance:none;appearance:none;touch-action:pan-y;cursor:pointer}
+.lab input[type=range]::-webkit-slider-runnable-track{height:10px;border-radius:999px;background:var(--lens)}
+.lab input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:34px;height:34px;margin-top:-12px;border-radius:50%;background:var(--tomato);border:4px solid var(--white);box-shadow:0 0 0 2px var(--tomato)}
+.lab input[type=range]::-moz-range-track{height:10px;border-radius:999px;background:var(--lens)}
+.lab input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:var(--tomato);border:4px solid var(--white);box-shadow:0 0 0 2px var(--tomato)}
+.range-ends{display:flex;justify-content:space-between;font-size:.85rem;color:var(--vine-soft)}
+.status{margin-top:1rem;padding:.9rem 1.1rem;border-radius:16px;font-weight:600;background:#FDE8E3;color:#7A1F11}
+.status.ok{background:#DDF1E6;color:var(--vine)}
+
+/* lenses */
+.lenses{background:var(--white)}
+.lens-list{list-style:none;margin:0;padding:0;max-width:52rem}
+.lens-list li{display:grid;grid-template-columns:minmax(150px,230px) 1fr auto;gap:1rem;align-items:center;padding:1.1rem 0;border-top:1px solid var(--line)}
+.lens-list li:last-child{border-bottom:1px solid var(--line)}
+.lens-list h3{font-size:1.02rem}
+.lens-list small{display:block;color:var(--vine-soft);font-weight:500}
+.bar-track{height:26px;background:var(--sky);border-radius:999px;overflow:hidden}
+.bar-fill{height:100%;background:var(--lens);border-radius:999px;border-inline-end:5px solid var(--vine)}
+.price{font:900 1.1rem var(--display);white-space:nowrap}
+.note{margin-top:1.1rem;font-size:.9rem;color:var(--vine-soft)}
+
+/* guides */
+.guides{list-style:none;margin:0;padding:0;max-width:46rem}
+.guides li{border-top:1px solid var(--line)}
+.guides li:last-child{border-bottom:1px solid var(--line)}
+.guides a{display:flex;justify-content:space-between;gap:1rem;padding:1.1rem 0;text-decoration:none;font-weight:600}
+.guides a:hover{color:var(--tomato)}
+.guides span{font-weight:500;color:var(--vine-soft);white-space:nowrap}
+
+/* final */
+.final{background:var(--lens);text-align:center}
+.final .cta-row{justify-content:center;margin-top:1.6rem}
+.final p{max-width:34rem;margin:1rem auto 0;font-size:1.1rem}
+
+/* footer */
+footer{background:var(--vine);color:rgba(255,255,255,.88);padding-block:3rem calc(5.5rem + env(safe-area-inset-bottom));font-size:.95rem}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem}
+footer h3{color:var(--white);margin-bottom:.8rem}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.4rem}
+footer a{text-decoration:none}
+footer a:hover{text-decoration:underline}
+.legal{margin-top:2rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.25);font-size:.88rem}
+
+.dock{display:none}
+.wa{position:fixed;inset-block-end:1.1rem;inset-inline-end:1.1rem;z-index:60;display:flex;align-items:center;gap:.5rem;background:#1F9D55;color:var(--white);padding:.85rem 1.2rem;border-radius:999px;font-weight:700;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.2)}
+
+/* ---------- tablet and below ---------- */
+@media (max-width:900px){
+  .hero-grid,.lab-grid{grid-template-columns:1fr}
+  .hero p.lead{max-width:40rem}
+  .hero-art{max-width:520px}
+  .steps{grid-template-columns:1fr 1fr;column-gap:1.5rem}
+  .steps li{padding-inline-end:0}
+  .grid{grid-template-columns:1fr 1fr}
+  .foot{grid-template-columns:1fr 1fr}
+  .foot > div:first-child{grid-column:1 / -1}
+  .menu-btn{display:block;min-height:44px}
+  .nav{display:none;position:absolute;inset-inline:0;top:100%;background:var(--white);flex-direction:column;align-items:stretch;gap:0;padding:.4rem var(--gutter) 1.2rem;border-bottom:1px solid var(--line);max-height:calc(100vh - 70px);max-height:calc(100dvh - 70px);overflow-y:auto}
+  .nav.open{display:flex}
+  .nav a{padding:.85rem 0;border-bottom:1px solid var(--line);font-size:1.05rem}
+  .nav .btn{margin-top:1rem;border-bottom:0;padding:1rem}
+}
+
+/* ---------- phones and small tablets ---------- */
+@media (max-width:700px){
+  .ages{display:flex;gap:.7rem;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1 * var(--gutter));padding-inline:var(--gutter);scroll-padding-inline:var(--gutter);padding-bottom:.6rem;-webkit-overflow-scrolling:touch}
+  .ages li{flex:0 0 148px;scroll-snap-align:start}
+  .dock{display:flex;gap:.6rem;position:fixed;inset-inline:0;bottom:0;z-index:70;background:var(--white);border-top:1px solid var(--line);padding:.7rem max(var(--gutter),env(safe-area-inset-left)) calc(.7rem + env(safe-area-inset-bottom)) max(var(--gutter),env(safe-area-inset-right));transform:translateY(110%);transition:transform .25s}
+  .dock.show{transform:none}
+  .dock .btn{flex:1;min-height:48px;padding:.8rem 1rem}
+  .dock .wa-btn{flex:0 0 48px;padding:0;background:#1F9D55;color:var(--white);border-radius:50%;display:grid;place-items:center;text-decoration:none}
+  .wa{display:none}
+}
+
+@media (max-width:560px){
+  body{font-size:16px}
+  .topbar{font-size:.85rem}
+  .topbar li:nth-child(n+2){display:none}
+  .hero{padding-block:1.8rem 2.4rem}
+  .hero p.lead{font-size:1.08rem;margin-block:1rem 1.4rem}
+  .cta-row .btn{flex:1 1 100%;min-height:52px}
+  .facts{grid-template-columns:repeat(3,1fr);gap:.6rem;font-size:.82rem;margin-top:1.6rem}
+  .facts strong{font-size:.95rem}
+  .hero-art{margin-top:.4rem}
+  .steps{grid-template-columns:1fr}
+  .tryon .cta-row{flex-direction:column;align-items:stretch}
+  .tryon small{text-align:center}
+  .grid{gap:1.2rem .8rem}
+  .card .pic{border-radius:22px}
+  .card h3{font-size:.97rem}
+  .card .meta{flex-direction:column;gap:0;font-size:.85rem}
+  .sizetip{padding:.9rem 1rem}
+  .feat{grid-template-columns:1fr}
+  .lab{border-radius:28px}
+  .lens-list li{grid-template-columns:1fr auto;row-gap:.6rem}
+  .lens-list .bar-track{grid-column:1 / -1;order:3}
+  .guides a{flex-direction:column;gap:.15rem}
+  .foot{grid-template-columns:1fr}
+  .final .cta-row{flex-direction:column}
+}
+
+@media (max-width:360px){
+  h1{font-size:2rem}
+  .facts{grid-template-columns:1fr 1fr}
+}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="topbar">
+  <div class="wrap">
+    <ul>
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Free home try-on before you buy</li>
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Free shipping to all GCC countries</li>
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>15-day full refund guarantee</li>
+    </ul>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="https://tomatoglasses.me/" aria-label="Tomato Glasses home">
+      <svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="23" r="15" fill="#D63A24"/><path d="M20 9c-2-4-6-5-8-4 2 1 3 3 3 5-3-1-5 0-6 2 3 0 5 1 7 2 2-1 4-2 7-2-1-2-3-3-6-2 0-2 1-4 3-5-2-1-4-1-5 2z" fill="#134B36"/><rect x="9" y="19" width="9" height="7" rx="3.5" fill="none" stroke="#fff" stroke-width="2"/><rect x="22" y="19" width="9" height="7" rx="3.5" fill="none" stroke="#fff" stroke-width="2"/><path d="M18 22h4" stroke="#fff" stroke-width="2"/></svg>
+      Tomato Glasses
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="https://tomatoglasses.me/pages/unique-features">Unique features</a>
+      <a href="https://tomatoglasses.me/pages/all-collections">Collections</a>
+      <a href="https://tomatoglasses.me/pages/prescription-lenses">Lenses</a>
+      <a href="https://tomatoglasses.me/pages/sizing-advice">Size guide</a>
+      <a href="https://tomatoglasses.me/pages/contact">Contact</a>
+      <a class="btn btn-primary" href="https://tomatoglasses.me/pages/home-try-on">Free home try-on</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Glasses that stay put, however fast they run.</h1>
+      <p class="lead">Flexible, adjustable frames for babies and children, with lenses made to your child's own measurements. Try them at home for free before you decide.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://tomatoglasses.me/pages/home-try-on">Order your free home try-on</a>
+        <a class="btn btn-ghost" href="https://tomatoglasses.me/collections/kids-range">Shop kids glasses</a>
+      </div>
+      <ul class="facts">
+        <li><strong>From AED 699</strong>Frames with lenses</li>
+        <li><strong>Under 8 g</strong>Light enough to forget</li>
+        <li><strong>5 days</strong>To try the kit at home</li>
+      </ul>
+    </div>
+    <div class="hero-art" aria-hidden="false">
+      <div class="tile a"><img src="https://tomatoglasses.me/cdn/shop/products/TKAC14_MAIN_large_c4b706f7-2a0e-4c9d-9e86-649d71bb3dde_large.JPG?v=1499508851" alt="Tomato Glasses TKAC14 children's frame in pink with hearts" onerror="this.style.display='none'"></div>
+      <div class="tile b"><img src="https://tomatoglasses.me/cdn/shop/products/TJBC6_MAIN_large_79ef7c95-c0a4-4997-ade6-c2c65a23c1a1_large.jpg?v=1499509203" alt="Tomato Glasses TJBC6 junior frame in black and red" onerror="this.style.display='none'"></div>
+      <div class="award">Best Children's Eyewear Award, Tokyo 2016</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOME TRY-ON -->
+<section class="tryon" id="try-on">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Try before you buy, from your sofa.</h2>
+      <p>We send a kit of our most popular frames. You are one photo away from your child's next pair.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Tell us their age</h3><p>Share your child's age and gender and we send a free try-on kit.</p></li>
+      <li><h3>Try for 5 days</h3><p>Let your child wear the frames at home, at play and at the table.</p></li>
+      <li><h3>Send one photo</h3><p>Take a clear, straight-on photo of your child wearing the pair they love and send it on WhatsApp. Our lab uses it to place the lenses exactly.</p></li>
+      <li><h3>Return the kit</h3><p>Send the kit back and we make the lenses. Your new glasses arrive ready to wear.</p></li>
+    </ol>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://tomatoglasses.me/pages/home-try-on">Start your free try-on</a>
+      <small>Free shipping across the GCC</small>
+    </div>
+  </div>
+</section>
+
+<!-- SHOP BY AGE -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Shop by age</h2>
+      <p>Pick your child's age to see the frames that fit. Not sure? The free try-on lets you test sizes at home.</p>
+    </div>
+    <ul class="ages">
+      <!-- Age bands map to the existing collections; adjust when the new bands are final -->
+      <li><a href="https://tomatoglasses.me/collections/baby-range"><b>0 to 2</b><span>Baby range</span></a></li>
+      <li><a href="https://tomatoglasses.me/collections/kids-range"><b>3 to 6</b><span>Kids range</span></a></li>
+      <li><a href="https://tomatoglasses.me/collections/kids-range"><b>7 to 10</b><span>Kids range</span></a></li>
+      <li><a href="https://tomatoglasses.me/collections/junior-range"><b>11 to 13</b><span>Junior range</span></a></li>
+      <li><a href="https://tomatoglasses.me/collections/junior-range"><b>13 and up</b><span>Junior range</span></a></li>
+    </ul>
+    <div class="sizetip">
+      <span>Already wearing glasses? Look inside the arm for numbers like <code>42-17</code>. That is the frame size.</span>
+      <a href="https://tomatoglasses.me/pages/sizing-advice"><b>Open the size guide</b></a>
+    </div>
+  </div>
+</section>
+
+<!-- POPULAR -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2>Most popular frames</h2></div>
+    <div class="grid">
+      <a class="card" href="https://tomatoglasses.me/products/kids-a-range-tkac14-hearts-pink-1">
+        <div class="pic"><img loading="lazy" src="https://tomatoglasses.me/cdn/shop/products/TKAC14_MAIN_large_c4b706f7-2a0e-4c9d-9e86-649d71bb3dde_large.JPG?v=1499508851" alt="TKAC14 frame in pink with hearts" onerror="this.style.display='none'"></div>
+        <h3>Hearts, pink</h3><div class="meta"><span>TKAC14, Kids A range</span><b>From AED 495</b></div>
+      </a>
+      <a class="card" href="https://tomatoglasses.me/products/kids-c-range-tkcc7-transparent-purple">
+        <div class="pic"><img loading="lazy" src="https://tomatoglasses.me/cdn/shop/products/TKCC7_FRONT_1024x1024_2b94a6b5-0c8b-4e5b-898c-e3b808cbc4e1_large.jpg?v=1499508957" alt="TKCC7 frame in transparent purple" onerror="this.style.display='none'"></div>
+        <h3>Transparent purple</h3><div class="meta"><span>TKCC7, Kids C range</span><b>From AED 495</b></div>
+      </a>
+      <a class="card" href="https://tomatoglasses.me/products/junior-b-range-tjbc6-black-red">
+        <div class="pic"><img loading="lazy" src="https://tomatoglasses.me/cdn/shop/products/TJBC6_MAIN_large_79ef7c95-c0a4-4997-ade6-c2c65a23c1a1_large.jpg?v=1499509203" alt="TJBC6 frame in black and red" onerror="this.style.display='none'"></div>
+        <h3>Black and red</h3><div class="meta"><span>TJBC6, Junior B range</span><b>From AED 495</b></div>
+      </a>
+      <a class="card" href="https://tomatoglasses.me/products/copy-of-kids-a-range-tkac1">
+        <div class="pic"><img loading="lazy" src="https://tomatoglasses.me/cdn/shop/products/TKAC3_MAIN_1024x1024_119152cc-ff9a-4c10-8480-7f0eb5e56678_large.JPG?v=1499508637" alt="TKAC3 frame in blue with transparent cars" onerror="this.style.display='none'"></div>
+        <h3>Blue, transparent cars</h3><div class="meta"><span>TKAC3, Kids A range</span><b>From AED 495</b></div>
+      </a>
+      <a class="card" href="https://tomatoglasses.me/products/copy-of-kids-c-range-tkcc16-solid-blue">
+        <div class="pic"><img loading="lazy" src="https://tomatoglasses.me/cdn/shop/products/TKCC16_FRONT_large_cb195e73-cb25-48ed-9014-8cc659c992d4_large.JPG?v=1499509036" alt="TKCC16 frame in solid dark blue" onerror="this.style.display='none'"></div>
+        <h3>Solid dark blue</h3><div class="meta"><span>TKCC16, Kids C range</span><b>From AED 495</b></div>
+      </a>
+      <a class="card" href="https://tomatoglasses.me/products/baby-range-tbac2">
+        <div class="pic"><img loading="lazy" src="https://tomatoglasses.me/cdn/shop/products/TBAC2_MAIN_large.jpg?v=1499492521" alt="TBAC2 baby frame in pink" onerror="this.style.display='none'"></div>
+        <h3>Baby, pink</h3><div class="meta"><span>TBAC2, Baby range</span><b>From AED 650</b></div>
+      </a>
+    </div>
+    <div class="more"><a class="btn btn-ghost" href="https://tomatoglasses.me/collections/all">See all frames</a></div>
+  </div>
+</section>
+
+<!-- FIT LAB -->
+<section id="fit" style="background:var(--white)">
+  <div class="wrap lab-grid">
+    <div>
+      <h2>Why they stay put, and why the fit matters.</h2>
+      <p style="margin-top:.9rem;font-size:1.1rem">A child only sees clearly when the pupil sits in the middle of the lens. If the frame slides, they look through the edge and the eyes do not get the help the lenses are meant to give. Tomato frames adjust so the lens stays centred.</p>
+      <dl class="feat">
+        <div><dt>Non-slip nose pad and tips</dt><dd>Stay put when they jump or run.</dd></div>
+        <div><dt>Nose pad adjusts up and down</dt><dd>Centres the pupils in the lens.</dd></div>
+        <div><dt>Adjustable temples</dt><dd>Snug and comfortable behind the ears.</dd></div>
+        <div><dt>Flexible, hypoallergenic</dt><dd>Swiss material that is gentle on skin.</dd></div>
+        <div><dt>Keeps its shape in the heat</dt><dd>Does not warp in a hot car or summer sun.</dd></div>
+        <div><dt>Under 8 g, with rear strap</dt><dd>Light, with an adjustable strap for a snug hold.</dd></div>
+      </dl>
+    </div>
+
+    <div class="lab">
+      <svg viewBox="0 0 520 280" role="img" aria-label="Diagram of a child's eyes behind an adjustable glasses frame">
+        <!-- eyes (fixed) -->
+        <ellipse cx="165" cy="140" rx="62" ry="30" fill="#fff" stroke="#134B36" stroke-width="3"/>
+        <ellipse cx="355" cy="140" rx="62" ry="30" fill="#fff" stroke="#134B36" stroke-width="3"/>
+        <circle cx="165" cy="140" r="20" fill="#2A6A50"/><circle cx="165" cy="140" r="9" fill="#134B36"/>
+        <circle cx="355" cy="140" r="20" fill="#2A6A50"/><circle cx="355" cy="140" r="9" fill="#134B36"/>
+        <!-- frame (moves) -->
+        <g id="frame">
+          <rect x="85" y="80" width="160" height="120" rx="48" fill="#BFE0EE" fill-opacity=".55" stroke="#134B36" stroke-width="7"/>
+          <rect x="275" y="80" width="160" height="120" rx="48" fill="#BFE0EE" fill-opacity=".55" stroke="#134B36" stroke-width="7"/>
+          <path d="M245 125q15-14 30 0" fill="none" stroke="#134B36" stroke-width="7" stroke-linecap="round"/>
+          <path d="M85 120H50M435 120h35" stroke="#134B36" stroke-width="7" stroke-linecap="round"/>
+          <ellipse cx="236" cy="150" rx="6" ry="14" fill="#D63A24"/>
+          <ellipse cx="284" cy="150" rx="6" ry="14" fill="#D63A24"/>
+          <path d="M165 128v24M153 140h24M355 128v24M343 140h24" stroke="#D63A24" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 5"/>
+        </g>
+      </svg>
+      <label for="nose">Slide the nose pad up until the pupils sit in the middle of the lenses</label>
+      <input id="nose" type="range" min="-30" max="30" value="24" step="1" aria-describedby="fit-status">
+      <div class="range-ends"><span>Pad lower</span><span>Pad higher</span></div>
+      <div id="fit-status" class="status" role="status" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- LENSES -->
+<section class="lenses">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Choose how thin the lenses are.</h2>
+      <p>Stronger prescriptions can mean thick, heavy lenses. Thinner options are lighter and look better. The bar shows relative lens thickness.</p>
+    </div>
+    <ul class="lens-list">
+      <li><div><h3>Standard</h3><small>Freeform 1.5</small></div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="price">AED 699</span></li>
+      <li><div><h3>Thin</h3><small>1.61, 25% thinner</small></div><div class="bar-track"><div class="bar-fill" style="width:75%"></div></div><span class="price">AED 832</span></li>
+      <li><div><h3>Premium</h3><small>1.67, 30% thinner</small></div><div class="bar-track"><div class="bar-fill" style="width:70%"></div></div><span class="price">AED 944</span></li>
+      <li><div><h3>Ultra thin</h3><small>1.74, 35% thinner</small></div><div class="bar-track"><div class="bar-fill" style="width:65%"></div></div><span class="price">AED 1,183</span></li>
+    </ul>
+    <p class="note">Prices shown are frame plus lenses for AED 495 frames. Frame only, without lenses, is AED 495.</p>
+    <div class="more"><a class="btn btn-ghost" href="https://tomatoglasses.me/pages/prescription-lenses">Compare lenses</a></div>
+  </div>
+</section>
+
+<!-- GUIDES -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><h2>Guides for parents</h2></div>
+    <ul class="guides">
+      <li><a href="https://tomatoglasses.me/blogs/how-to-choose-kids-glasses/how-to-choose-the-right-glasses-for-kids">How to choose the right glasses for kids <span>Read the guide</span></a></li>
+      <li><a href="https://tomatoglasses.me/blogs/how-to-choose-kids-glasses/importance-of-right-fit-2">Why the right fit matters <span>Read the guide</span></a></li>
+      <li><a href="https://tomatoglasses.me/blogs/how-to-choose-kids-glasses/importance-of-uv-protection">Why UV protection matters <span>Read the guide</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap">
+    <h2>Not sure where to start?</h2>
+    <p>Request the free try-on kit, or message our team on WhatsApp and we will help you choose.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://tomatoglasses.me/pages/home-try-on">Order your free home try-on</a>
+      <a class="btn btn-ghost" href="https://wa.me/971528439800">Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <h3>Tomato Glasses Middle East</h3>
+        <p>Award-winning glasses for babies and children. Secure checkout with Apple Pay, Visa and Mastercard.</p>
+      </div>
+      <div>
+        <h3>Shop and help</h3>
+        <ul>
+          <li><a href="https://tomatoglasses.me/pages/home-try-on">Free home try-on</a></li>
+          <li><a href="https://tomatoglasses.me/collections">Collections</a></li>
+          <li><a href="https://tomatoglasses.me/pages/sizing-advice">Size guide</a></li>
+          <li><a href="https://tomatoglasses.me/pages/optical-showrooms">Optical showrooms</a></li>
+          <li><a href="https://tomatoglasses.me/policies/refund-policy">Refund policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:+971528439800">+971 5 284 39800</a></li>
+          <li><a href="mailto:info@tomatoglasses.me">info@tomatoglasses.me</a></li>
+          <li><a href="https://www.instagram.com/tomatoglassesmiddleeast/">Instagram</a></li>
+          <li><a href="https://www.facebook.com/tomatoglassesmiddleeast/">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="legal">Copyright 2026 Tomato Glasses. All rights reserved.</p>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/971528439800" aria-label="Chat on WhatsApp">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.500l1.700-5.200A8.500 8.500 0 1 1 21 11.500z"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+<div class="dock" id="dock">
+  <a class="btn btn-primary" href="https://tomatoglasses.me/pages/home-try-on">Free home try-on</a>
+  <a class="wa-btn" href="https://wa.me/971528439800" aria-label="Chat on WhatsApp"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg></a>
+</div>
+
+<script>
+/* mobile menu */
+(function(){
+  var b=document.querySelector('.menu-btn'),n=document.getElementById('nav');
+  b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');
+    b.setAttribute('aria-expanded',o);
+  });
+})();
+
+/* mobile dock: appears once the hero buttons have scrolled out of view */
+(function(){
+  var dock=document.getElementById('dock'),row=document.querySelector('.hero .cta-row');
+  if(!dock||!row||!('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function(e){
+    var r=e[0];
+    dock.classList.toggle('show',!r.isIntersecting && r.boundingClientRect.top<0);
+  }).observe(row);
+})();
+
+/* fit lab: nose pad slider moves the frame against fixed eyes */
+(function(){
+  var s=document.getElementById('nose'),f=document.getElementById('frame'),st=document.getElementById('fit-status');
+  function update(){
+    var v=parseInt(s.value,10);
+    f.setAttribute('transform','translate(0 '+v+')');
+    var ok=Math.abs(v)<=4;
+    st.className='status'+(ok?' ok':'');
+    st.textContent=ok
+      ? 'Pupils centred. Your child looks through the middle of the lens and sees clearly.'
+      : (v>0
+        ? 'Frame sits too low. Your child looks through the top edge of the lens.'
+        : 'Frame sits too high. Your child looks through the bottom edge of the lens.');
+  }
+  s.addEventListener('input',update);
+  update();
+})();
+</script>
+</body>
+</html>
