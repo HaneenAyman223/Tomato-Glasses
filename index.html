@@ -254,11 +254,11 @@ footer a:hover{text-decoration:underline}
 
 /* finder v2 (photo cards) */
 .fitcard{max-width:1000px}
-.agegrid{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem;list-style:none;margin:0;padding:0}
-.agepick{width:100%;display:block;padding:0;background:var(--sky);border:2px solid transparent;border-radius:24px;overflow:hidden;cursor:pointer;font:700 1.05rem var(--body);color:var(--vine);text-align:center;transition:border-color .2s,transform .2s}
+.agegrid{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;max-width:760px;list-style:none;margin:0;padding:0}
+.agepick{width:100%;display:block;padding:0;background:var(--sky);border:2px solid transparent;border-radius:18px;overflow:hidden;cursor:pointer;font:700 1.05rem var(--body);color:var(--vine);text-align:center;transition:border-color .2s,transform .2s}
 .agepick:hover{border-color:var(--tomato);transform:translateY(-3px)}
-.agepick img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
-.agepick span{display:block;padding:.7rem .4rem .2rem}
+.agepick img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 25%}
+.agepick span{display:block;padding:.5rem .4rem .1rem;font-size:.95rem}
 .agepick small{display:block;font:500 .85rem var(--body);color:var(--vine-soft);padding-bottom:.8rem}
 .sizeart{background:var(--sky);border-radius:24px;padding:1rem;margin-bottom:1.1rem;max-width:560px}
 .sizeart svg{width:100%;height:auto;display:block}
@@ -269,9 +269,9 @@ footer a:hover{text-decoration:underline}
 .look img{width:90%;height:90%;object-fit:contain;mix-blend-mode:multiply}
 .look[aria-pressed="true"]{background:#FFF1EE;border-color:var(--tomato)}
 .look:hover{border-color:var(--tomato)}
-.match{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(1.2rem,3vw,2.4rem);align-items:start}
+.match{display:grid;grid-template-columns:220px 1fr;gap:clamp(1.2rem,3vw,2.4rem);align-items:start}
 .match .who{position:relative;border-radius:26px;overflow:hidden;background:var(--sky)}
-.match .who img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+.match .who img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
 .match .tick{position:absolute;inset-block-start:.8rem;inset-inline-start:.8rem;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#2F9E6A;color:var(--white)}
 .recs{display:grid;gap:.8rem;margin:1rem 0 1.2rem;list-style:none;padding:0}
 .rec{display:grid;grid-template-columns:110px 1fr auto;gap:1rem;align-items:center;background:var(--sky);border-radius:20px;padding:.6rem 1rem .6rem .6rem}
@@ -280,7 +280,7 @@ footer a:hover{text-decoration:underline}
 .rec b{display:block}
 .rec small{color:var(--vine-soft)}
 .rec a.view{font-weight:700;font-size:.92rem;white-space:nowrap}
-@media (max-width:900px){.looks{grid-template-columns:repeat(3,1fr)}.match{grid-template-columns:1fr}.match .who{max-width:360px}}
+@media (max-width:900px){.looks{grid-template-columns:repeat(3,1fr)}.match{grid-template-columns:1fr}.match .who{max-width:200px}}
 @media (max-width:700px){.agegrid{grid-template-columns:1fr 1fr}.looks{grid-template-columns:1fr 1fr}.rec{grid-template-columns:84px 1fr}.rec a.view{grid-column:2}}
 
 /* ---------- tablet and below ---------- */
