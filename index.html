@@ -163,19 +163,6 @@ section{padding-block:clamp(3rem,7vw,5.5rem)}
 .card .meta b{color:var(--vine)}
 .more{margin-top:2rem}
 
-/* video facade: loads YouTube only on click */
-(function(){
-  var b=document.getElementById('vplay'),box=document.getElementById('vbox'); if(!b) return;
-  b.addEventListener('click',function(){
-    var f=document.createElement('iframe');
-    f.src='https://www.youtube-nocookie.com/embed/wPFzCY17KuI?rel=0&autoplay=1';
-    f.title='How to adjust Tomato Glasses';
-    f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
-    f.allowFullscreen=true;
-    box.replaceChild(f,b); f.focus();
-  });
-})();
-
 /* fit lab */
 .lab-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(1.5rem,4vw,4rem);align-items:start}
 .feat{margin:2rem 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 2rem}
@@ -256,13 +243,45 @@ footer a:hover{text-decoration:underline}
 .ages{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
 .agecard{text-decoration:none;display:block;background:var(--white);border-radius:30px;overflow:hidden;transition:transform .2s}
 .agecard:hover{transform:translateY(-4px)}
-.agecard img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 30%}
+.agecard img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
 .agecard div{padding:1.1rem 1.3rem 1.3rem}
 .agecard h3{margin-bottom:.25rem}
 .agecard p{font-size:.95rem;color:var(--vine-soft)}
 .agecard b{display:inline-block;margin-top:.6rem;color:var(--tomato)}
 @media (max-width:900px){.ages{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.ages{grid-template-columns:1fr}}
+
+
+/* finder v2 (photo cards) */
+.fitcard{max-width:1000px}
+.agegrid{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem;list-style:none;margin:0;padding:0}
+.agepick{width:100%;display:block;padding:0;background:var(--sky);border:2px solid transparent;border-radius:24px;overflow:hidden;cursor:pointer;font:700 1.05rem var(--body);color:var(--vine);text-align:center;transition:border-color .2s,transform .2s}
+.agepick:hover{border-color:var(--tomato);transform:translateY(-3px)}
+.agepick img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.agepick span{display:block;padding:.7rem .4rem .2rem}
+.agepick small{display:block;font:500 .85rem var(--body);color:var(--vine-soft);padding-bottom:.8rem}
+.sizeart{background:var(--sky);border-radius:24px;padding:1rem;margin-bottom:1.1rem;max-width:560px}
+.sizeart svg{width:100%;height:auto;display:block}
+.sizeart p{font-size:.9rem;color:var(--vine-soft);text-align:center;margin-top:.3rem}
+.looks{display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem;list-style:none;margin:0;padding:0}
+.look{width:100%;display:block;background:var(--sky);border:2px solid transparent;border-radius:22px;padding:.5rem .4rem .8rem;cursor:pointer;font:700 .95rem var(--body);color:var(--vine);text-align:center}
+.look .im{display:grid;place-items:center;aspect-ratio:5/4;background:var(--white);border-radius:16px;margin-bottom:.5rem;overflow:hidden}
+.look img{width:90%;height:90%;object-fit:contain;mix-blend-mode:multiply}
+.look[aria-pressed="true"]{background:#FFF1EE;border-color:var(--tomato)}
+.look:hover{border-color:var(--tomato)}
+.match{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(1.2rem,3vw,2.4rem);align-items:start}
+.match .who{position:relative;border-radius:26px;overflow:hidden;background:var(--sky)}
+.match .who img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.match .tick{position:absolute;inset-block-start:.8rem;inset-inline-start:.8rem;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#2F9E6A;color:var(--white)}
+.recs{display:grid;gap:.8rem;margin:1rem 0 1.2rem;list-style:none;padding:0}
+.rec{display:grid;grid-template-columns:110px 1fr auto;gap:1rem;align-items:center;background:var(--sky);border-radius:20px;padding:.6rem 1rem .6rem .6rem}
+.rec .im{background:var(--white);border-radius:14px;aspect-ratio:5/4;display:grid;place-items:center;overflow:hidden}
+.rec img{width:90%;height:90%;object-fit:contain;mix-blend-mode:multiply}
+.rec b{display:block}
+.rec small{color:var(--vine-soft)}
+.rec a.view{font-weight:700;font-size:.92rem;white-space:nowrap}
+@media (max-width:900px){.looks{grid-template-columns:repeat(3,1fr)}.match{grid-template-columns:1fr}.match .who{max-width:360px}}
+@media (max-width:700px){.agegrid{grid-template-columns:1fr 1fr}.looks{grid-template-columns:1fr 1fr}.rec{grid-template-columns:84px 1fr}.rec a.view{grid-column:2}}
 
 /* ---------- tablet and below ---------- */
 @media (max-width:900px){
@@ -443,50 +462,55 @@ footer a:hover{text-decoration:underline}
       <p>Optional and quick. Just want to look around? <a href="https://tomatoglasses.me/collections/all"><b>See all frames</b></a>.</p>
     </div>
 
-    <div class="fitcard" id="finder" data-step="1">
+    <div class="fitcard" id="finder">
       <ol class="prog" aria-hidden="true"><li class="on"></li><li></li><li></li></ol>
 
       <div class="pane" data-pane="1">
         <h3>How old is your child?</h3>
-        <ul class="opts">
-          <li><button class="opt" type="button" data-range="baby" data-label="0 to 2">0 to 2<small>Baby</small></button></li>
-          <li><button class="opt" type="button" data-range="kids" data-label="3 to 6">3 to 6<small>Little ones</small></button></li>
-          <li><button class="opt" type="button" data-range="kids" data-label="7 to 10" data-alt="junior">7 to 10<small>Kids</small></button></li>
-          <li><button class="opt" type="button" data-range="junior" data-label="11 to 13" data-alt="kids">11 to 13<small>Juniors</small></button></li>
-          <li><button class="opt" type="button" data-range="junior" data-label="13 and up">13 and up<small>Teens</small></button></li>
+        <ul class="agegrid">
+          <li><button class="agepick" type="button" data-range="baby" data-label="0 to 2" data-img="images/age-0-2.jpg"><img loading="lazy" src="images/age-0-2.jpg" width="320" height="320" alt=""><span>0 to 2 years</span><small>Baby</small></button></li>
+          <li><button class="agepick" type="button" data-range="kids" data-label="3 to 6" data-img="images/age-3-6.jpg"><img loading="lazy" src="images/age-3-6.jpg" width="320" height="320" alt=""><span>3 to 6 years</span><small>Little ones</small></button></li>
+          <li><button class="agepick" type="button" data-range="kids" data-label="7 to 10" data-alt="junior" data-img="images/age-7-10.jpg"><img loading="lazy" src="images/age-7-10.jpg" width="320" height="320" alt=""><span>7 to 10 years</span><small>Kids</small></button></li>
+          <li><button class="agepick" type="button" data-range="junior" data-label="11 and up" data-alt="kids" data-img="images/age-11-plus.jpg"><img loading="lazy" src="images/age-11-plus.jpg" width="320" height="320" alt=""><span>11 years and up</span><small>Juniors and teens</small></button></li>
         </ul>
         <noscript><p class="hint">Browse by age: <a href="https://tomatoglasses.me/collections/baby-range">Baby</a>, <a href="https://tomatoglasses.me/collections/kids-range">Kids</a>, <a href="https://tomatoglasses.me/collections/junior-range">Junior</a>.</p></noscript>
       </div>
 
       <div class="pane" data-pane="2" hidden>
-        <h3>Do they wear glasses now?</h3>
+        <h3>Do you know their current frame size?</h3>
+        <div class="sizeart">
+          <svg viewBox="0 0 420 150" role="img" aria-label="Illustration of a glasses arm with the frame size printed on it, for example 42 square 15 dash 125">
+            <path d="M18 92c0-26 20-44 52-48l240-26c34-4 60 6 90 30 8 7 4 18-6 18H70C38 66 18 78 18 92z" fill="#E86F7C" transform="translate(0 14)"/>
+            <path d="M18 106c0-26 20-44 52-48l240-26c34-4 60 6 90 30" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="3"/>
+            <rect x="92" y="72" width="236" height="34" rx="8" fill="#fff" fill-opacity=".92"/>
+            <text x="210" y="96" text-anchor="middle" font-family="Figtree,sans-serif" font-weight="700" font-size="22" fill="#134B36">42 &#9633; 15 - 125</text>
+          </svg>
+          <p>The size is printed inside the arm. The first number is the one we use.</p>
+        </div>
         <ul class="opts">
           <li><button class="opt wide" type="button" data-mode="known">Yes, I know the size</button></li>
-          <li><button class="opt wide" type="button" data-mode="unsure">Yes, but I am not sure how to read it</button></li>
+          <li><button class="opt wide" type="button" data-mode="unsure">No, I am not sure</button></li>
           <li><button class="opt wide" type="button" data-mode="first">No, this is their first pair</button></li>
         </ul>
         <div class="sizebox" id="sizebox" hidden>
           <div>
-            <label for="sizeinput">Frame size (optional)</label>
-            <input id="sizeinput" type="text" inputmode="numeric" autocomplete="off" placeholder="42-17" maxlength="7">
+            <label for="sizeinput">Frame size</label>
+            <input id="sizeinput" type="text" inputmode="numeric" autocomplete="off" placeholder="42-15" maxlength="7">
           </div>
-          <button class="btn btn-primary" type="button" id="sizego">Continue</button>
+          <button class="btn btn-primary" type="button" id="sizego">Next</button>
         </div>
-        <p class="hint">The size is printed inside the arm of the frame, in numbers like <code>42-17</code>. The first number is the one that matters.</p>
         <div class="nav-row"><button class="link-btn" type="button" data-back="1">Back</button></div>
       </div>
 
       <div class="pane" data-pane="3" hidden>
-        <h3>Which colours do they love?</h3>
-        <ul class="opts swatches">
-          <li><button class="swatch" type="button" aria-pressed="false" data-colour="Blue"><i style="background:#2C5FA8"></i>Blue</button></li>
-          <li><button class="swatch" type="button" aria-pressed="false" data-colour="Pink"><i style="background:#F08BB0"></i>Pink</button></li>
-          <li><button class="swatch" type="button" aria-pressed="false" data-colour="Red"><i style="background:#D63A24"></i>Red</button></li>
-          <li><button class="swatch" type="button" aria-pressed="false" data-colour="Purple"><i style="background:#8D6BC9"></i>Purple</button></li>
-          <li><button class="swatch" type="button" aria-pressed="false" data-colour="Green"><i style="background:#3A9A62"></i>Green</button></li>
-          <li><button class="swatch" type="button" aria-pressed="false" data-colour="Orange"><i style="background:#F29A38"></i>Orange</button></li>
-          <li><button class="swatch" type="button" aria-pressed="false" data-colour="Black"><i style="background:#1E1E1E"></i>Black</button></li>
-          <li><button class="swatch" type="button" aria-pressed="false" data-colour="Transparent"><i style="background:linear-gradient(135deg,#fff,#D6EAF3)"></i>Transparent</button></li>
+        <h3>Which look do they like?</h3>
+        <p class="hint" style="margin:-.5rem 0 1rem">Pick one or more, or skip.</p>
+        <ul class="looks">
+          <li><button class="look" type="button" aria-pressed="false" data-look="pink"><span class="im"><img loading="lazy" src="https://tomatoglasses.me/cdn/shop/products/TKAC14_MAIN_large_c4b706f7-2a0e-4c9d-9e86-649d71bb3dde_large.JPG?v=1499508851" alt="" onerror="this.style.display='none'"></span>Pink</button></li>
+          <li><button class="look" type="button" aria-pressed="false" data-look="purple"><span class="im"><img loading="lazy" src="https://tomatoglasses.me/cdn/shop/products/TKCC7_FRONT_1024x1024_2b94a6b5-0c8b-4e5b-898c-e3b808cbc4e1_large.jpg?v=1499508957" alt="" onerror="this.style.display='none'"></span>Purple</button></li>
+          <li><button class="look" type="button" aria-pressed="false" data-look="blue"><span class="im"><img loading="lazy" src="https://tomatoglasses.me/cdn/shop/products/TKCC16_FRONT_large_cb195e73-cb25-48ed-9014-8cc659c992d4_large.JPG?v=1499509036" alt="" onerror="this.style.display='none'"></span>Blue</button></li>
+          <li><button class="look" type="button" aria-pressed="false" data-look="red"><span class="im"><img loading="lazy" src="https://tomatoglasses.me/cdn/shop/products/TJBC6_MAIN_large_79ef7c95-c0a4-4997-ade6-c2c65a23c1a1_large.jpg?v=1499509203" alt="" onerror="this.style.display='none'"></span>Red and black</button></li>
+          <li><button class="look" type="button" aria-pressed="false" data-look="play"><span class="im"><img loading="lazy" src="https://tomatoglasses.me/cdn/shop/products/TKAC3_MAIN_1024x1024_119152cc-ff9a-4c10-8480-7f0eb5e56678_large.JPG?v=1499508637" alt="" onerror="this.style.display='none'"></span>Playful prints</button></li>
         </ul>
         <div class="nav-row">
           <button class="btn btn-primary" type="button" id="showmatch">Show my match</button>
@@ -496,17 +520,21 @@ footer a:hover{text-decoration:underline}
       </div>
 
       <div class="pane" data-pane="4" hidden aria-live="polite">
-        <div class="result">
-          <h3 id="res-title">Start with the Kids range</h3>
-          <p class="sum" id="res-sum"></p>
-          <p class="note2" id="res-note"></p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="https://tomatoglasses.me/pages/home-try-on">Order your free home try-on</a>
-            <a class="btn btn-ghost" id="res-browse" href="https://tomatoglasses.me/collections/kids-range">Browse the range</a>
+        <div class="match">
+          <div class="who"><img id="res-img" src="images/age-3-6.jpg" alt="" width="640" height="640"><span class="tick" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span></div>
+          <div class="result">
+            <h3 id="res-title">Great match!</h3>
+            <p class="sum" id="res-sum"></p>
+            <p class="note2" id="res-note"></p>
+            <ul class="recs" id="res-recs"></ul>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="https://tomatoglasses.me/pages/home-try-on">Order your free home try-on</a>
+              <a class="btn btn-ghost" id="res-browse" href="https://tomatoglasses.me/collections/kids-range">Browse the range</a>
+            </div>
+            <p class="browse-all" id="res-alt" hidden></p>
+            <p class="browse-all">Need help reading the size? <a href="https://tomatoglasses.me/pages/sizing-advice"><b>Open the size guide</b></a></p>
+            <div class="nav-row"><button class="link-btn" type="button" id="restart">Start again</button></div>
           </div>
-          <p class="browse-all" id="res-alt" hidden></p>
-          <p class="browse-all">Need help reading the size? <a href="https://tomatoglasses.me/pages/sizing-advice"><b>Open the size guide</b></a></p>
-          <div class="nav-row"><button class="link-btn" type="button" id="restart">Start again</button></div>
         </div>
       </div>
     </div>
@@ -751,21 +779,30 @@ footer a:hover{text-decoration:underline}
   }).observe(row);
 })();
 
-/* find my fit: three optional taps, then a recommendation */
+/* find my fit: photo cards, then a match with real frames */
 (function(){
   var root=document.getElementById('finder'); if(!root) return;
   var panes=[].slice.call(root.querySelectorAll('.pane'));
   var dots=[].slice.call(root.querySelectorAll('.prog li'));
   var base='https://tomatoglasses.me/collections/';
+  var P='https://tomatoglasses.me/products/', I='https://tomatoglasses.me/cdn/shop/products/';
   var ranges={
     baby:{name:'Baby range',href:base+'baby-range',blurb:'Soft, flexible frames made for the youngest faces.'},
     kids:{name:'Kids range',href:base+'kids-range',blurb:'Flexible, adjustable frames that stay put through play.'},
     junior:{name:'Junior range',href:base+'junior-range',blurb:'Frames sized for older children and teens.'}
   };
+  var frames=[
+    {code:'TKAC14',name:'Hearts, pink',range:'kids',tags:['pink'],price:'AED 495',url:P+'kids-a-range-tkac14-hearts-pink-1',img:I+'TKAC14_MAIN_large_c4b706f7-2a0e-4c9d-9e86-649d71bb3dde_large.JPG?v=1499508851'},
+    {code:'TKCC7',name:'Transparent purple',range:'kids',tags:['purple'],price:'AED 495',url:P+'kids-c-range-tkcc7-transparent-purple',img:I+'TKCC7_FRONT_1024x1024_2b94a6b5-0c8b-4e5b-898c-e3b808cbc4e1_large.jpg?v=1499508957'},
+    {code:'TKCC16',name:'Solid dark blue',range:'kids',tags:['blue'],price:'AED 495',url:P+'copy-of-kids-c-range-tkcc16-solid-blue',img:I+'TKCC16_FRONT_large_cb195e73-cb25-48ed-9014-8cc659c992d4_large.JPG?v=1499509036'},
+    {code:'TKAC3',name:'Blue, transparent cars',range:'kids',tags:['blue','play'],price:'AED 495',url:P+'copy-of-kids-a-range-tkac1',img:I+'TKAC3_MAIN_1024x1024_119152cc-ff9a-4c10-8480-7f0eb5e56678_large.JPG?v=1499508637'},
+    {code:'TJBC6',name:'Black and red',range:'junior',tags:['red'],price:'AED 495',url:P+'junior-b-range-tjbc6-black-red',img:I+'TJBC6_MAIN_large_79ef7c95-c0a4-4997-ade6-c2c65a23c1a1_large.jpg?v=1499509203'},
+    {code:'TBAC2',name:'Baby, pink',range:'baby',tags:['pink'],price:'AED 650',url:P+'baby-range-tbac2',img:I+'TBAC2_MAIN_large.jpg?v=1499492521'}
+  ];
   var state;
   function reset(){
-    state={range:null,alt:null,label:'',mode:null,size:'',colours:[]};
-    [].forEach.call(root.querySelectorAll('.swatch'),function(s){s.setAttribute('aria-pressed','false');});
+    state={range:null,alt:null,label:'',img:'',mode:null,size:'',looks:[]};
+    [].forEach.call(root.querySelectorAll('.look'),function(s){s.setAttribute('aria-pressed','false');});
     document.getElementById('sizeinput').value='';
     document.getElementById('sizebox').hidden=true;
   }
@@ -777,50 +814,84 @@ footer a:hover{text-decoration:underline}
       if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true});}
     }
   }
+  function pick(){
+    var pool=frames.filter(function(f){return f.range===state.range;});
+    if(state.alt) pool=pool.concat(frames.filter(function(f){return f.range===state.alt;}));
+    pool.forEach(function(f){f.score=f.tags.filter(function(t){return state.looks.indexOf(t)>-1;}).length+(f.range===state.range?0.5:0);});
+    pool.sort(function(a,b){return b.score-a.score;});
+    return pool.slice(0,3);
+  }
   function render(){
     var r=ranges[state.range];
-    document.getElementById('res-title').textContent='Start with the '+r.name;
+    document.getElementById('res-title').textContent='Great match: start with the '+r.name;
     var bits=['Age '+state.label];
     if(state.size) bits.push('size '+state.size);
-    bits.push(state.colours.length? state.colours.join(', ') : 'any colour');
     document.getElementById('res-sum').textContent=bits.join('  ·  ');
     document.getElementById('res-note').textContent=r.blurb+' '+(state.mode==='known'
       ? 'You know their size, so you can order straight away. Want to be sure? The free home try-on lets you test the fit for 5 days first.'
       : 'Not sure about the size? That is what the free home try-on is for: we send a kit of our most popular frames, your child tries them for 5 days, then you choose.');
-    var b=document.getElementById('res-browse'); b.href=r.href; b.textContent='Browse the '+r.name;
+    document.getElementById('res-img').src=state.img;
+    var ul=document.getElementById('res-recs'); ul.textContent='';
+    pick().forEach(function(f){
+      var li=document.createElement('li'); li.className='rec';
+      var im=document.createElement('div'); im.className='im';
+      var img=document.createElement('img'); img.alt=f.name+' frame'; img.src=f.img; img.loading='lazy';
+      img.onerror=function(){img.style.display='none';};
+      im.appendChild(img);
+      var t=document.createElement('div'); var b=document.createElement('b'); b.textContent=f.name;
+      var sm=document.createElement('small'); sm.textContent=f.code+'  ·  From '+f.price;
+      t.appendChild(b); t.appendChild(sm);
+      var a=document.createElement('a'); a.className='view'; a.href=f.url; a.textContent='View details';
+      li.appendChild(im); li.appendChild(t); li.appendChild(a); ul.appendChild(li);
+    });
+    var b2=document.getElementById('res-browse'); b2.href=r.href; b2.textContent='Browse the '+r.name;
     var alt=document.getElementById('res-alt');
     if(state.alt){
-      var a=ranges[state.alt];
+      var a2=ranges[state.alt];
       alt.hidden=false; alt.textContent='';
       alt.appendChild(document.createTextNode('Older or taller child? Also see the '));
-      var l=document.createElement('a'); l.href=a.href; l.textContent=a.name; l.style.fontWeight='700';
+      var l=document.createElement('a'); l.href=a2.href; l.textContent=a2.name; l.style.fontWeight='700';
       alt.appendChild(l); alt.appendChild(document.createTextNode('.'));
     } else { alt.hidden=true; }
   }
   root.addEventListener('click',function(e){
     var t=e.target.closest('button'); if(!t) return;
     if(t.hasAttribute('data-range')){
-      state.range=t.getAttribute('data-range'); state.label=t.getAttribute('data-label'); state.alt=t.getAttribute('data-alt');
+      state.range=t.getAttribute('data-range'); state.label=t.getAttribute('data-label'); state.alt=t.getAttribute('data-alt'); state.img=t.getAttribute('data-img');
       show(2,true);
     } else if(t.hasAttribute('data-mode')){
       state.mode=t.getAttribute('data-mode');
       if(state.mode==='known'){ document.getElementById('sizebox').hidden=false; document.getElementById('sizeinput').focus(); }
       else { document.getElementById('sizebox').hidden=true; state.size=''; show(3,true); }
     } else if(t.id==='sizego'){
-      var m=document.getElementById('sizeinput').value.trim().match(/^(\d{2})\D+(\d{2})$/);
+      var m=document.getElementById('sizeinput').value.trim().match(/^(\d{2})\D+(\d{2})/);
       state.size=m? m[1]+'-'+m[2] : '';
       show(3,true);
-    } else if(t.classList.contains('swatch')){
+    } else if(t.classList.contains('look')){
       var on=t.getAttribute('aria-pressed')!=='true';
       t.setAttribute('aria-pressed',on);
-      var c=t.getAttribute('data-colour'), i=state.colours.indexOf(c);
-      if(on&&i<0) state.colours.push(c); if(!on&&i>-1) state.colours.splice(i,1);
+      var c=t.getAttribute('data-look'), i=state.looks.indexOf(c);
+      if(on&&i<0) state.looks.push(c);
+      if(!on&&i>-1) state.looks.splice(i,1);
     } else if(t.id==='showmatch'){ render(); show(4,true); }
-    else if(t.id==='skipcolour'){ state.colours=[]; render(); show(4,true); }
+    else if(t.id==='skipcolour'){ state.looks=[]; render(); show(4,true); }
     else if(t.hasAttribute('data-back')){ show(parseInt(t.getAttribute('data-back'),10),true); }
     else if(t.id==='restart'){ reset(); show(1,true); }
   });
   reset(); show(1,false);
+})();
+
+/* video facade: loads YouTube only on click */
+(function(){
+  var b=document.getElementById('vplay'),box=document.getElementById('vbox'); if(!b) return;
+  b.addEventListener('click',function(){
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/wPFzCY17KuI?rel=0&autoplay=1';
+    f.title='How to adjust Tomato Glasses';
+    f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen=true;
+    box.replaceChild(f,b); f.focus();
+  });
 })();
 
 /* fit lab: nose pad slider moves the frame against fixed eyes */
